@@ -8,22 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Archive Branch with Script
-        uses: actions/github-script@v6
+      - name: Delete branch
+        uses: dawidd6/action-delete-branch@v3
         with:
-          script: |
-            const octokit =  github;
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const branchToArchive = 'test'; // Replace with your branch name
-
-            octokit.repos.update({
-              owner,
-              repo,
-              archived: true,
-              branch: branchToArchive
-            }).then(() => {
-              console.log(`Branch '${branchToArchive}' archived successfully!`);
-            }).catch(error => {
-              console.error(error);
-            });
+          github_token: ${{secrets.TOKEN}}
+          branches: test
+          suffix: -done
