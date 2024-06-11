@@ -12,7 +12,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const octokit = new github({ token: process.env.TOKEN });
+            const octokit =  github;
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             const branchToArchive = 'test'; // Replace with your branch name
