@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Archive Branch
-        uses: octokit/rest@v18
+        uses: octokit/rest
         with:
           token: ${{ secrets.TOKEN }}
           owner: ${{ github.repository_owner }}
