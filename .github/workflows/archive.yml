@@ -11,7 +11,7 @@ jobs:
       - name: Archive Branch
         uses: octokit/rest@v18
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
           owner: ${{ github.repository_owner }}
           repo: ${{ github.repository }}
           branch: 'test'  # Replace with the actual branch name to archive
