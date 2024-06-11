@@ -13,4 +13,3 @@ jobs:
         with:
           github_token: ${{secrets.TOKEN}}
           branches: test
-          suffix: -done
